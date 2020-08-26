@@ -1,55 +1,23 @@
-// const user = {
-//   name: 'Mango',
-//   age: 20,
-//   hobby: 'html',
-//   premium: true,
-// };
-
-// console.log(user);
-
-// user.mood = 'happy';
-// console.log(user);
-
-// user.hobby = 'skydiving';
-// console.log(user);
-
-// user.premium = false;
-// console.log(user);
-
-// for (const key of Object.keys(user)) {
-//   console.log(`${key}:${user[key]}`);
-// }
-
-let message = '';
-
-const user = {
-  age: 20,
-  hobby: 'html',
-  name: 'Mango',
-  premium: true,
-};
-
-//Write code under this line
-user.mood = 'happy';
-
-user['full time'] = true;
-
-user.hobby = 'skydiving';
-
-user.premium = false;
-
-const keys = Object.keys(user);
 // Write code under this line
-for (const key of keys) {
-  message += `${key}:${user[key]}\n`;
+const addIndex = (element, index) => element + index;
+// Write code under this line
+const subIndex = (element, index) => element - index;
+
+function mapArray(array, cb) {
+  // Write code under this line
+  const numbers = new Array(array.length);
+  for (let i = 0; i < array.length; i += 1) {
+    const element = array[i];
+    const index = i;
+    numbers[i] = cb(element, index);
+  }
+  return numbers;
 }
 
-console.log(message);
-/*
-'age : 20
-hobby : skydiving
-name : Mango
-premium : false
-mood : happy
-"full time" : true
-' */
+const arr = [1, 2, 3, 4, 5];
+
+console.log(mapArray(arr, addIndex));
+// [1, 3, 5, 7, 9]
+
+console.log(mapArray(arr, subIndex));
+// [1, 1, 1, 1, 1]
